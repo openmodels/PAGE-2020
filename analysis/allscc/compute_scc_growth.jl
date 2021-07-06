@@ -26,7 +26,7 @@ function compute_scc(m::Model=get_model(); year::Union{Int,Nothing}=nothing, eta
     prtp == nothing ? nothing : setorup_param!(m, :ptp_timepreference, prtp * 100.)
 
     mm = get_marginal_model(m, year=year, pulse_size=pulse_size)   # Returns a marginal model that has already been run
-    scc = mm[:EquityWeighting_growth, :td_totaldiscountedimpacts] / undiscount_scc(mm.base, year)
+    scc = mm[:EquityWeighting, :td_totaldiscountedimpacts] / undiscount_scc(mm.base, year)
 
     return scc
 end
