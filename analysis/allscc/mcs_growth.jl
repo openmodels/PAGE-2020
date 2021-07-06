@@ -237,27 +237,10 @@ function getsim(ge_minimum::Union{Float64,Nothing}=nothing,
         ############################################################################
 
         save(EquityWeighting.td_totaldiscountedimpacts,
-             EquityWeighting.tpc_totalaggregatedcosts,
-             EquityWeighting.tac_totaladaptationcosts,
-             EquityWeighting.te_totaleffect,
-             CO2Cycle.c_CO2concentration,
-             TotalForcing.ft_totalforcing,
              ClimateTemperature.rt_g_globaltemperature,
-             SeaLevelRise.s_sealevel,
-             SLRDamages.rgdp_per_cap_SLRRemainGDP,
-             MarketDamagesBurke.rgdp_per_cap_MarketRemainGDP,
-             NonMarketDamages.rgdp_per_cap_NonMarketRemainGDP,
-             Discontinuity.rgdp_per_cap_NonMarketRemainGDP,
-             GDP.ge_growtheffects,
              GDP.gdp,
-             EquityWeighting.lgdp_gdploss,
              EquityWeighting.grwnet_realizedgdpgrowth,
-             Discontinuity.occurdis_occurrencedummy,
-             GDP.cbreg_regionsatbound,
-             EquityWeighting.excdampv_excessdamagespresvalue,
-             MarketDamagesBurke.isat_ImpactinclSaturationandAdaptation,
-             GDP.ge_growtheffects,
-             GDP.ge_use_empiricaldistribution
+             GDP.cbreg_regionsatbound
              )
 
     end # de
@@ -356,14 +339,15 @@ function get_scc_mcs(samplesize::Int, year::Int, output_path::String=joinpath(@_
                       pulse_size::Union{Float64,Nothing}=75000.,
                       scenario::String="RCP4.5 & SSP2",
                       use_permafrost::Bool=true, use_seaice::Bool=true, use_page09damages::Bool=false,
-                      ge_minimum::Union{Float64,Nothing}=nothing,
-                      ge_maximum::Union{Float64,Nothing}=nothing,
-                      ge_mode::Union{Float64,Nothing}=nothing,
-                      ge_use_empirical::Union{Float64,Nothing}=nothing,
-                      civvalue_multiplier::Union{Float64,Nothing}=1.,
-                      use_convergence::Union{Float64,Nothing}=nothing,
-                      cbabs::Union{Float64,Nothing}=nothing,
-                      eqwbound::Union{Float64,Nothing}=nothing)
+                      ge_minimum::Union{Float64, Nothing} = nothing,
+                      ge_maximum::Union{Float64, Nothing} = nothing,
+                      ge_mode::Union{Float64, Nothing} = nothing,
+                      ge_use_empirical::Union{Float64, Nothing} = nothing,
+                      civvalue_multiplier::Union{Float64, Nothing} = 1.,
+                      use_convergence::Union{Float64, Nothing} = nothing,
+                      cbabs::Union{Float64, Nothing} = nothing,
+                      eqwbound::Union{Float64, Nothing} = nothing,
+                      geadrate::Union{Float64, Nothing} = nothing)
 
     # Setup the marginal model and modify key parameters if they are specified
     m = getpage(scenario, use_permafrost, use_seaice, use_page09damages)
@@ -379,6 +363,10 @@ function get_scc_mcs(samplesize::Int, year::Int, output_path::String=joinpath(@_
     if eqwbound != nothing
         setorup_param!(m, :eqwbound_maxshareofweighteddamages, eqwbound)
     end
+    if geadrate != nothing
+        setorup_param!(m, :geadrate_growtheffects_adaptationrate, geadrate)
+    end
+
     mm = compute_scc_mm(m, year=year, eta=eta, prtp=prtp, pulse_size=pulse_size)[:mm]
 
     # Setup SCC calculation and place for results
