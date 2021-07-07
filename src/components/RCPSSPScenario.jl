@@ -1,6 +1,6 @@
 ## Mapping, until Mimi can handle string parameters:
 ## String -> Int64
-## "zero" -> 0, "rcp26" -> 26, "rcp45" -> 45, "rcp85" -> 85, "rcpw" -> 10, "rcp26extra" -> 260
+## "zero" -> 0, "rcp19" -> 19, "rcp26" -> 26, "rcp45" -> 45, "rcp85" -> 85, "rcpw" -> 10, "rcp26extra" -> 260
 ## "ssp1" -> 1, "ssp2" -> 2, "ssp5" -> 5, "sspw" -> 10, "ssp234" -> 234
 ## $(rcp) -> rcp$(rcp), $(ssp) -> ssp$(ssp)
 
@@ -174,6 +174,9 @@ function addrcpsspscenario(model::Model, scenario::String)
         rcpsspscenario[:rcp] = 10
         rcpsspscenario[:ssp] = 10
         rcpsspscenario[:weight_scenarios] = 51.579276825415874
+    elseif scenario == "RCP1.9 & SSP1"
+        rcpsspscenario[:rcp] = 19
+        rcpsspscenario[:ssp] = 1
     elseif scenario == "RCP2.6 & SSP1"
         rcpsspscenario[:rcp] = 26
         rcpsspscenario[:ssp] = 1

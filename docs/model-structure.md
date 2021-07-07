@@ -41,13 +41,12 @@ to their EU values.
 
 PAGE-2020 uses the RCP-SSP scenario scheme used by the IPCC, along
 with additional scenarios for studying a 1.5 C mitigation pathway and
-mitigation that corresponds to the existing INDC committments. These
+mitigation that corresponds to the existing INDC commitments. These
 scenarios combine both emissions and socioeconomic growth. The
 available scenarios are: `Zero Emissions & SSP1`, `1.5 degC Target`,
 `2 degC Target`, `2.5 degC Target`, `NDCs`, `NDCs Partial`, `BAU`,
-`RCP2.6 & SSP1`, `RCP4.5 & SSP2`, and `RCP8.5 & SSP5`. These are
-described in more detail
-in
+`RCP1.9 & SSP1`, `RCP2.6 & SSP1`, `RCP4.5 & SSP2`, and `RCP8.5 & SSP5`.
+These are described in more detail in
 [Yumashev et al. (2019)](https://www.nature.com/articles/s41467-019-09863-x#Sec14).
 
 ## Sectors and gases

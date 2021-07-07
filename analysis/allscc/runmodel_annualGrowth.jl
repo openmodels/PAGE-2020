@@ -58,7 +58,7 @@ df_sccMC = DataFrame(permafr=false, seaice=false, ge_string="-999", scen="-999",
                                   perc05=-999., perc95=-999., perc10=-999., perc90=-999.)
 
 # get the SCC for three different growth effects distributions and scenarios
-for jj_scen in ["RCP4.5 & SSP2", "RCP2.6 & SSP1", "RCP8.5 & SSP5", "1.5 degC Target"]
+for jj_scen in ["RCP4.5 & SSP2", "RCP2.6 & SSP1", "RCP8.5 & SSP5", "RCP1.9 & SSP1"]
     for jj_gestring in ["EMPIRICAL"]
         for jj_permafr in [true]
             for jj_seaice in [true]

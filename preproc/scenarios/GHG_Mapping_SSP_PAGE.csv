@@ -1,0 +1,10 @@
+GHG_SSP,GHG_PAGE,GHG_PAGE_Description
+Emissions|BC,Excess,"Chris Hope: Trop O3, BC Aerosols, OC aerosols, CFCs and HCFCs. DY: CFCs and HCFCs have been phased out as part of the Montreal Protocol"
+Emissions|CH4,CH4,
+Emissions|CO,Excess,
+Emissions|CO2,CO2,
+Emissions|F-Gases,Lin,"Chris Hope: PFCs, HFC and SF6. Sometimes known as High GWP gases. DY: HFCs are regulated by the Kigali Amendment to the Montreal Protocol"
+Emissions|N2O,N2O,
+Emissions|OC,Excess,
+Emissions|Sulfur,Sulphates,
+Emissions|VOC,Excess,"DY: This group includes HCFCs and HFCs, among several other componets, so there is partial overlap with the Lin category. See https://uk-air.defra.gov.uk/assets/documents/reports/cat07/0710011214_ED48749_VOC_Incineration_-_CC_Report_v3.pdf"

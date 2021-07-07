@@ -6,7 +6,7 @@ using CSV
 
 include("../src/main_model.jl")
 
-for scenario in ["RCP4.5 & SSP2", "RCP8.5 & SSP5", "1.5 degC Target", "RCP2.6 & SSP1"]
+for scenario in ["RCP4.5 & SSP2", "RCP8.5 & SSP5", "RCP1.9 & SSP1", "RCP2.6 & SSP1"]
 
     m0 = getpage(scenario, false, false, true; use_page09weights=true, page09_discontinuity=true, page09_sealevelrise=true) # just updating climate
     set_param!(m0, :NonMarketDamages, :GDP_per_cap_focus_0_FocusRegionEU, 27934.244777382406)
@@ -99,6 +99,8 @@ for scenario in ["RCP4.5 & SSP2", "RCP8.5 & SSP5", "1.5 degC Target", "RCP2.6 & 
 
     if scenario == "1.5 degC Target"
         suffix = "deg1p5"
+    elseif scenario == "RCP1.9 & SSP1"
+        suffix = "ssp119"
     elseif scenario == "RCP2.6 & SSP1"
         suffix = "ssp126"
     elseif scenario == "RCP4.5 & SSP2"
