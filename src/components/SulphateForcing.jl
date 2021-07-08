@@ -6,14 +6,14 @@
     se0_sulphateemissionsbase = Parameter(index=[region], unit="TgS/year")
     pse_sulphatevsbase = Parameter(index=[time, region], unit="%")
     se_sulphateemissions = Variable(index=[time, region], unit="TgS/year")
-    area = Parameter(index=[region], unit="km^2")
+    area = Parameter(index=[region], unit="km2")
     area_e_eartharea = Parameter(unit="km2", default=5.1e8)
 
-    sfx_sulphateflux = Variable(index=[time, region], unit="TgS/km^2/yr")
+    sfx_sulphateflux = Variable(index=[time, region], unit="TgS/km2/yr")
 
     d_sulphateforcingbase = Parameter(unit="W/m2", default=-0.46666666666666673)
     ind_slopeSEforcing_indirect = Parameter(unit="W/m2", default=-0.2333333333333333)
-    nf_naturalsfx = Parameter(index=[region], unit="TgS/km^2/yr")
+    nf_naturalsfx = Parameter(index=[region], unit="TgS/km2/yr")
 
     fsd_directsf = Variable(index=[time, region], unit="W/m2")
     fsi_indirectsf = Variable(index=[time, region], unit="W/m2")

@@ -156,7 +156,7 @@ for jj_scen in scenarios
 end
 
 # remove the first placeholder row
-df_sccMC = df_sccMC[df_sccMC[:scen] .!= "-999", :]
+df_sccMC = df_sccMC[df_sccMC[!, :scen] .!= "-999", :]
 
 # export the results
 CSV.write(string(dir_output, "MimiPageGrowthEffectsResultsMonteCarlo.csv"), df_sccMC)
